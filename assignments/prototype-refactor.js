@@ -26,11 +26,14 @@ Prototype Refactor
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
 
-function GameObject(chara) {
+class GameObject {
+  constructor(obj){
   this.createdAt = Date();
-  this.name = chara.name;
-  this.dimensions = chara.dimensions;
-  this.destroy = function() {
+  this.name = obj.name;
+  this.dimensions = obj.dimensions;
+  }
+
+  destroy() {
     return `${this.name} was eaten by a grue.`;
   }
 }
@@ -42,12 +45,14 @@ function GameObject(chara) {
   * should inherit destroy() from GameObject's prototype
 */
 
-function CharacterStats(chara) {
-  GameObject.call(this, chara);
-  this.healthPoints = chara.healthPoints;
-  this.takeDamage = function() {
-    return `${this.name} took damage.`
-  };
+class CharacterStats extends GameObject {
+  constructor(stat){
+    super(stat);
+    this.healthPoints = stat.healthPoints;
+  }
+    takeDamage() {
+      return `${this.name} took damage.`
+    };
 };
 
 /*
@@ -60,12 +65,14 @@ function CharacterStats(chara) {
   * should inherit takeDamage() from CharacterStats
 */
 
-function Humanoid(chara) {
-  CharacterStats.call(this, chara);
-  this.team = chara.team;
-  this.weapons = chara.weapons;
-  this.language = chara.language;
-  this.greet = function() {
+class Humanoid extends CharacterStats {
+  constructor(chara) {
+    super(chara)
+    this.team = chara.team;
+    this.weapons = chara.weapons;
+    this.language = chara.language;
+  }
+  greet() {
     return `${this.name} offers a greeting in ${this.language}`
   };
 }

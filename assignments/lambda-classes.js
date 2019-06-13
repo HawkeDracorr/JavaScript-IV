@@ -15,9 +15,9 @@ class Person {
 class Instructor extends Person {
   constructor(teach){
     super(teach);
-    specialty = teach.specialty;
-    favLanguage = teach.favLanguage;
-    catchPhrase = teach.favLanguage;
+    this.specialty = teach.specialty;
+    this.favLanguage = teach.favLanguage;
+    this.catchPhrase = teach.catchPhrase;
   };
 // methods for Instructor
   demo(subject) {
@@ -46,9 +46,9 @@ class ProjectManager extends Instructor{
 class Student extends Person {
   constructor(sdt){
     super(sdt);
-    prevBg = sdt.prevBg;
-    className = sdt.className;
-    favSubject = sdt.favSubject;
+    this.prevBg = sdt.prevBg;
+    this.className = sdt.className;
+    this.favSubject = sdt.favSubject;
   };
   listSubjects() {
     return `${this.name}'s favorite subjects: ${this.favSubject}'`
@@ -57,6 +57,106 @@ class Student extends Person {
     return `${this.name} has submitted a Pull Request for: ${subject}`
   };
   sprintChallenge(subject) {
-    return `${} has begun work on the ${} sprint challenge!`
+    return `${this.name} has begun work on the ${subject} sprint challenge!`
   };
 };
+
+
+// Objects created
+
+// Instructors
+const soldier76 = new Instructor({
+  name: 'Jack Morrison',
+  location: 'America',
+  age: 55,
+  specialty: 'shootin dudes and poppin squats. also pretty good with HTML & CSS.',
+  catchPhrase: 'Get off my Lawn!',
+})
+
+const reaper = new Instructor({
+  name: 'Gabriel Reyes',
+  location: 'The Shadows',
+  age: 58,
+  specialty: 'Being Edgy, and absorbing all the health. Somewhat good with Angular and JavaScript.',
+  catchPhrase: 'DIE! DIE!! DIE!!!',
+})
+
+
+// Project Managers
+const mercy = new ProjectManager({
+  name: 'Angela Ziegler',
+  location: 'Sweden',
+  age: 37,
+  specialty: 'Patching you up and being in a pocket. Works magic with C#.',
+  catchPhrase: 'Heroes never die!',
+  gradClassName: 'DS2',
+  favInstructor: 'Ana Amari',
+})
+
+const pharah = new ProjectManager({
+  name: 'Fareeha Amari',
+  location: 'Egypt',
+  age: 32,
+  specialty: 'Rocket jumping, and making it rain.',
+  catchPhrase: 'Justice rains from above!',
+  gradClassName: 'Web14',
+  favInstructor: 'Wilhelm Reinhardt',
+})
+
+
+// // Students
+// const template = new Student({
+//   name: '',
+//   location: '',
+//   age: ,
+//   prevBg: '',
+//   className: '',
+//   favSubject: '',
+// })
+//
+// const template = new Student({
+//   name: '',
+//   location: '',
+//   age: ,
+//   prevBg: '',
+//   className: '',
+//   favSubject: '',
+// })
+
+
+// Prints
+console.log(`Name: ${soldier76.name} | Age: ${soldier76.age} | Location: ${soldier76.location}`);
+console.log(`----------`);
+console.log(`Specialties: ${soldier76.specialty}`);
+console.log(`catchPhrase: "${soldier76.catchPhrase}"`);
+
+console.log(' ');
+console.log('__');
+console.log(' ');
+
+console.log(`Name: ${reaper.name} | Age: ${reaper.age} | Location: ${reaper.location}`);
+console.log(`----------`);
+console.log(`Specialties: ${reaper.specialty}`);
+console.log(`catchPhrase: "${reaper.catchPhrase}"`);
+
+console.log(' ');
+console.log('__');
+console.log(' ');
+
+console.log(`Name: ${mercy.name} | Age: ${mercy.age} | Location: ${mercy.location}`);
+console.log(`----------`);
+console.log(`Specialties: ${mercy.specialty}`);
+console.log(`catchPhrase: "${mercy.catchPhrase}"`);
+console.log(`Favorite Instructor: ${mercy.favInstructor}`);
+console.log(`Grad Class: ${mercy.gradClassName}`);
+
+console.log(' ');
+console.log('__');
+console.log(' ');
+
+console.log(`Name: ${pharah.name} | Age: ${pharah.age} | Location: ${pharah.location}`);
+console.log(`----------`);
+console.log(`Specialties: ${pharah.specialty}`);
+console.log(`catchPhrase: "${pharah.catchPhrase}"`);
+console.log(`Favorite Instructor: ${pharah.favInstructor}`);
+console.log(`Grad Class: ${pharah.gradClassName}`);

@@ -38,10 +38,25 @@ class ProjectManager extends Instructor{
     this.gradClassName = pm.gradClassName;
     this.favInstructor = pm.favInstructor;
   };
+  standUp(channel) {
+    return `${this.name} send a message in ${channel}: LET'S GO, STAND UP TIME! GET PUMPED!`
+  };
 };
 
-class Student {
+class Student extends Person {
   constructor(sdt){
-
+    super(sdt);
+    prevBg = sdt.prevBg;
+    className = sdt.className;
+    favSubject = sdt.favSubject;
+  };
+  listSubjects() {
+    return `${this.name}'s favorite subjects: ${this.favSubject}'`
+  };
+  PRAssignment(subject) {
+    return `${this.name} has submitted a Pull Request for: ${subject}`
+  };
+  sprintChallenge(subject) {
+    return `${} has begun work on the ${} sprint challenge!`
   };
 };

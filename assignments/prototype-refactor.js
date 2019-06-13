@@ -26,13 +26,15 @@ Prototype Refactor
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
 
+// Refactored ES6 Class syntax
 class GameObject {
+// Constructor builds the object for the class, any attributes of class go here.
   constructor(obj){
   this.createdAt = Date();
   this.name = obj.name;
   this.dimensions = obj.dimensions;
   }
-
+// Methods defined outside of constructor
   destroy() {
     return `${this.name} was eaten by a grue.`;
   }
@@ -45,6 +47,7 @@ class GameObject {
   * should inherit destroy() from GameObject's prototype
 */
 
+// CharacterStats is an extension of GameObject
 class CharacterStats extends GameObject {
   constructor(stat){
     super(stat);
@@ -67,7 +70,7 @@ class CharacterStats extends GameObject {
 
 class Humanoid extends CharacterStats {
   constructor(chara) {
-    super(chara)
+    super(chara);
     this.team = chara.team;
     this.weapons = chara.weapons;
     this.language = chara.language;

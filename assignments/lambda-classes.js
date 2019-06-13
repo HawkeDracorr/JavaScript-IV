@@ -105,23 +105,23 @@ const pharah = new ProjectManager({
 
 
 // // Students
-// const template = new Student({
-//   name: '',
-//   location: '',
-//   age: ,
-//   prevBg: '',
-//   className: '',
-//   favSubject: '',
-// })
-//
-// const template = new Student({
-//   name: '',
-//   location: '',
-//   age: ,
-//   prevBg: '',
-//   className: '',
-//   favSubject: '',
-// })
+const dva = new Student({
+  name: 'Hana Song',
+  location: 'South Korea',
+  age: 19,
+  prevBg: 'Professional gamer',
+  className: 'Web21',
+  favSubject: 'Reccess',
+})
+
+const zen = new Student({
+  name: 'Tekhartha Zenyatta',
+  location: 'Nepal',
+  age: 20,
+  prevBg: 'Robat Monk',
+  className: 'UX3',
+  favSubject: 'Backend Web Development',
+})
 
 
 // Prints
@@ -129,6 +129,8 @@ console.log(`Name: ${soldier76.name} | Age: ${soldier76.age} | Location: ${soldi
 console.log(`----------`);
 console.log(`Specialties: ${soldier76.specialty}`);
 console.log(`catchPhrase: "${soldier76.catchPhrase}"`);
+console.log(' ');
+console.log(`Intro: "${soldier76.speak()}"`);
 
 console.log(' ');
 console.log('__');
@@ -138,6 +140,8 @@ console.log(`Name: ${reaper.name} | Age: ${reaper.age} | Location: ${reaper.loca
 console.log(`----------`);
 console.log(`Specialties: ${reaper.specialty}`);
 console.log(`catchPhrase: "${reaper.catchPhrase}"`);
+console.log(' ');
+console.log(`Intro: "${reaper.speak()}"`);
 
 console.log(' ');
 console.log('__');
@@ -149,6 +153,8 @@ console.log(`Specialties: ${mercy.specialty}`);
 console.log(`catchPhrase: "${mercy.catchPhrase}"`);
 console.log(`Favorite Instructor: ${mercy.favInstructor}`);
 console.log(`Grad Class: ${mercy.gradClassName}`);
+console.log(' ');
+console.log(`Intro: "${mercy.speak()}"`);
 
 console.log(' ');
 console.log('__');
@@ -160,3 +166,29 @@ console.log(`Specialties: ${pharah.specialty}`);
 console.log(`catchPhrase: "${pharah.catchPhrase}"`);
 console.log(`Favorite Instructor: ${pharah.favInstructor}`);
 console.log(`Grad Class: ${pharah.gradClassName}`);
+console.log(' ');
+console.log(`Intro: "${pharah.speak()}"`);
+
+console.log(' ');
+console.log('__');
+console.log(' ');
+
+console.log(`Name: ${dva.name} | Age: ${dva.age} | Location: ${dva.location}`);
+console.log(`----------`);
+console.log(`Cohort: ${dva.className}`);
+console.log(`Favorite Subject: "${dva.favSubject}"`);
+console.log(`Previous Background: ${dva.prevBg}`);
+console.log(' ');
+console.log(`Intro: "${dva.speak()}"`);
+
+console.log(' ');
+console.log('__');
+console.log(' ');
+
+console.log(`Name: ${zen.name} | Age: ${zen.age} | Location: ${zen.location}`);
+console.log(`----------`);
+console.log(`Cohort: ${zen.className}`);
+console.log(`Favorite Subject: "${zen.favSubject}"`);
+console.log(`Previous Background: ${zen.prevBg}`);
+console.log(' ');
+console.log(`Intro: "${zen.speak()}"`);

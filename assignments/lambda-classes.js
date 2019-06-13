@@ -32,9 +32,11 @@ class Instructor extends Person {
   };
 };
 
-class ProjectManager{
+class ProjectManager extends Instructor{
   constructor(pm) {
-
+    super(pm);
+    this.gradClassName = pm.gradClassName;
+    this.favInstructor = pm.favInstructor;
   };
 };
 

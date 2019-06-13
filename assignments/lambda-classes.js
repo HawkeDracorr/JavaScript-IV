@@ -49,6 +49,7 @@ class Student extends Person {
     this.prevBg = sdt.prevBg;
     this.className = sdt.className;
     this.favSubject = sdt.favSubject;
+    this.grade = sdt.grade;
   };
   listSubjects() {
     return `${this.name}'s favorite subjects: ${this.favSubject}'`
@@ -111,6 +112,7 @@ const dva = new Student({
   age: 19,
   prevBg: 'Professional gamer',
   className: 'Web21',
+  grade: 69,
   favSubject: 'Reccess',
 })
 
@@ -120,17 +122,25 @@ const zen = new Student({
   age: 20,
   prevBg: 'Robat Monk',
   className: 'UX3',
+  grade: 100,
   favSubject: 'Backend Web Development',
 })
 
 
 // Prints
+console.log('Instructors');
+console.log('-----');
 console.log(`Name: ${soldier76.name} | Age: ${soldier76.age} | Location: ${soldier76.location}`);
 console.log(`----------`);
 console.log(`Specialties: ${soldier76.specialty}`);
 console.log(`catchPhrase: "${soldier76.catchPhrase}"`);
 console.log(' ');
 console.log(`Intro: "${soldier76.speak()}"`);
+console.log(' ');
+console.log('Examples of teaching style:');
+console.log(`"${soldier76.demo('CSS Styling')}"`);
+console.log(`"${soldier76.grade(dva, 'JavaScript')}"`);
+console.log(`"${soldier76.grade(zen, 'BASIC')}"`);
 
 console.log(' ');
 console.log('__');
@@ -147,6 +157,8 @@ console.log(' ');
 console.log('__');
 console.log(' ');
 
+console.log('Project Managers');
+console.log('-----');
 console.log(`Name: ${mercy.name} | Age: ${mercy.age} | Location: ${mercy.location}`);
 console.log(`----------`);
 console.log(`Specialties: ${mercy.specialty}`);
@@ -155,6 +167,8 @@ console.log(`Favorite Instructor: ${mercy.favInstructor}`);
 console.log(`Grad Class: ${mercy.gradClassName}`);
 console.log(' ');
 console.log(`Intro: "${mercy.speak()}"`);
+console.log('===');
+console.log(mercy.standUp('#Web21'));
 
 console.log(' ');
 console.log('__');
@@ -173,6 +187,8 @@ console.log(' ');
 console.log('__');
 console.log(' ');
 
+console.log('Students');
+console.log('-----');
 console.log(`Name: ${dva.name} | Age: ${dva.age} | Location: ${dva.location}`);
 console.log(`----------`);
 console.log(`Cohort: ${dva.className}`);
